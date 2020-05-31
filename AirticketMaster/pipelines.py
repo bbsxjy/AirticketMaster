@@ -12,10 +12,10 @@ from scrapy import signals
 from time import strftime
 
 
-class AirticketmasterPipeline(object):
+class AirticketmasterPipeline:
 
     def __init__(self):
-        currentTime = strftime("%m%d%H%M");
+        currentTime = strftime("%m%d%H%M")
         filePath = "./AirticketMaster/data/" + str(currentTime) + ".json"
 
         self.file = codecs.open(filePath, 'w', encoding='utf-8')

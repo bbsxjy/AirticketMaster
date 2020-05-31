@@ -18,4 +18,4 @@ Scraper for air tickets
 
 # How to Run?
 -> scrapy crawl [spider name]
-e.g. scrapy crawl eastern_airline_spider
+e.g. scrapy crawl gospider

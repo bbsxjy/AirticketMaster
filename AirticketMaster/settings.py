@@ -16,10 +16,10 @@ NEWSPIDER_MODULE = 'AirticketMaster.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'AirticketMaster (+http://www.yourdomain.com)'
+# USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36"
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -33,7 +33,7 @@ ROBOTSTXT_OBEY = True
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-#COOKIES_ENABLED = False
+COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -88,3 +88,17 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+# Configurations for aggregated spider.
+KOREAN_AIRLINE_BASE_URL = 'https://www.koreanair.com/global/en.html'
+CHINA_EASTERN_BASE_URL = 'http://www.ceair.com'
+XIAMEN_AIRLINE_BASE_URL = 'https://www.xiamenair.com/zh-cn/'
+ALLOWED_DOMAINS = ['koreanair.com', 'ceair.com', 'xiamenair.com']
+INIT_DATE = '2020-06-05'
+AIRLINE_TARGETED_DEPARTURE_DATE_DICT = {
+   KOREAN_AIRLINE_BASE_URL: ['2020-06-12', '2020-06-19', '2020-06-26'],
+   CHINA_EASTERN_BASE_URL: ['2020-06-12', '2020-06-19', '2020-06-26'],
+   XIAMEN_AIRLINE_BASE_URL: ['2020-06-12', '2020-06-19', '2020-06-26']
+}
+
+SPIDER_NAME = 'gospider'

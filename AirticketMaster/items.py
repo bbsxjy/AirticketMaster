@@ -7,8 +7,22 @@
 
 import scrapy
 
+class TravelOption(scrapy.Item):
+    route_detail = scrapy.Field()
 
-class AirticketmasterItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class Route(scrapy.Item):
+    transfer = scrapy.Field()
+    num_of_transfer = scrapy.Field()
+    flight = scrapy.Field()
+    departure_time = scrapy.Field()
+    departure_city = scrapy.Field()
+    arrival_time = scrapy.Field()
+    arrival_city = scrapy.Field()
+
+class Flight(scrapy.Item):
+    flight_num = scrapy.Field()
+    remaining_ticket_status = scrapy.Field()
+    flight_duration = scrapy.Field()
+    is_flight_bookable = scrapy.Field()
+    ticket_price = scrapy.Field()
+    flight_class = scrapy.Field()
