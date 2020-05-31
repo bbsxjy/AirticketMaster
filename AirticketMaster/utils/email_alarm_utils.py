@@ -6,11 +6,11 @@ class EmailAlarmUtility:
 
     def trigger(self, route_detail, flight_detail, date):
 
-        gmail_user = 'sucinusxjy@gmail.com'
-        gmail_password = "bnnbuvzcasddtmgw"
+        gmail_user = 'some_email'
+        gmail_password = "some_password"
 
         sent_from = gmail_user
-        to = ['SOME_EMAIL']
+        to = ['some_to_email']
         subject = 'Found ticket to buy'
         body = '{} {} -> {} @ {} on {} for ￥{}!'.format(flight_detail["flight_num"].encode('utf-8'),
                                                         route_detail["departure_city"].encode('utf-8'),
