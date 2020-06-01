@@ -7,16 +7,11 @@ from AirticketMaster.utils.common_utils import *
 from AirticketMaster.utils.email_alarm_utils import *
 from AirticketMaster.settings import *
 
-class XiamenAirlineHelper:
-    travel_plan = {
-        ("luoshanji", "xiamen"):
-            ['2020-06-01', '2020-06-08', '2020-06-15', '2020-06-22', '2020-06-29'],
-        ("dongjing", "fuzhou"):
-            ['2020-06-03', '2020-06-10', '2020-06-17', '2020-06-24'],
-        ("amusitedan", "xiamen"):
-            ['2020-06-03', '2020-06-10', '2020-06-17', '2020-06-24'],
-        ("shouer", "xiamen"):
-            ['2020-06-01', '2020-06-08', '2020-06-15', '2020-06-22', '2020-06-29'],
+class ShandongAirlineHelper:
+
+    travel_plan_dict = {
+        "singapore" : "xiamen",
+        "dongjing" : "fuzhou"
     }
 
     def __init__(self):
@@ -25,14 +20,11 @@ class XiamenAirlineHelper:
     def parse(self, url, driver):
         travel_option = items.TravelOption()
 
-        for planed_city in self.travel_plan.keys():
+        for departure_city, arrival_city in self.travel_plan_dict.items():
             try:
 
                 flights_list = []
                 route_list = []
-                departure_city = planed_city[0]
-                arrival_city = planed_city[-1]
-                planed_dates = self.travel_plan[planed_city]
 
                 driver.get(url)
                 time.sleep(10)
@@ -67,7 +59,7 @@ class XiamenAirlineHelper:
                 # next_button.click()
                 # time.sleep(1)
 
-                arrival = driver.find_element_by_xpath("(//span[@data-date='{}'])".format(planed_dates[0]))
+                arrival = driver.find_element_by_xpath("(//span[@data-date='{}'])".format(INIT_DATE))
                 arrival.click()
 
                 time.sleep(1)
@@ -85,7 +77,7 @@ class XiamenAirlineHelper:
 
                 else:
 
-                    for date in planed_dates[1:]:
+                    for date in AIRLINE_TARGETED_DEPARTURE_DATE_DICT[XIAMEN_AIRLINE_BASE_URL]:
                         departure_date_input = driver.find_element_by_xpath("(//input[@placeholder='去程日期'])")
                         departure_date_input.clear()
                         departure_date_input.send_keys(date)
