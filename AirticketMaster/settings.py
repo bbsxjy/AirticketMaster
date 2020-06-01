@@ -94,13 +94,4 @@ KOREAN_AIRLINE_BASE_URL = 'https://www.koreanair.com/global/en.html'
 CHINA_EASTERN_BASE_URL = 'http://www.ceair.com'
 XIAMEN_AIRLINE_BASE_URL = 'https://www.xiamenair.com/zh-cn/'
 ALLOWED_DOMAINS = ['koreanair.com', 'ceair.com', 'xiamenair.com']
-INIT_DATE = '2020-06-05'
-AIRLINE_TARGETED_DEPARTURE_DATE_DICT = {
-   KOREAN_AIRLINE_BASE_URL: ['2020-06-12', '2020-06-19', '2020-06-26'],
-   CHINA_EASTERN_BASE_URL: ['2020-10-30'],
-   XIAMEN_AIRLINE_BASE_URL: ['2020-06-12', '2020-06-19', '2020-06-26']
-}
-
-
-
 SPIDER_NAME = 'gospider'

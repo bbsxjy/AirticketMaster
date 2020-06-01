@@ -81,7 +81,7 @@ class XiamenAirlineHelper:
 
                 if price_detail:
 
-                    self.wrap_up_search_results(driver, flights_list, route_list, travel_option, INIT_DATE)
+                    self.wrap_up_search_results(driver, flights_list, route_list, travel_option, planed_dates[0])
 
                 else:
 
