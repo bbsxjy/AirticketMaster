@@ -37,9 +37,12 @@ class AggregatedAirlineSpider(scrapy.Spider):
 
     def parse(self, response):
         # self.driver.maximize_window()
-        while True:
-            yield self.call_targeted_airline(response.url)
-            time.sleep(600)
+        try:
+            while True:
+                self.call_targeted_airline(response.url)
+                time.sleep(600)
+        except:
+            self.driver.close()
 
     def call_targeted_airline(self, url):
         return self.airline_dict[url].parse(url, self.driver)
