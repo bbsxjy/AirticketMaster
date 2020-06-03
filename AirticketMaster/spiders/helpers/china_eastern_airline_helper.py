@@ -88,7 +88,6 @@ class ChinaEasternAirlineHelper:
 
                         for flight in flight_list:
                             try:
-                                print is_element_present(flight, "section[class='detail'] > dl > dd[name='lowest'] > sub")
                                 if is_element_present(flight, "section[class='detail'] > dl > dd[name='lowest'] > sub"):
                                     flight_detail["flight_num"] = flight.find_element_by_css_selector("div[class='title']").text
                                     flight_detail["ticket_price"] = flight.find_element_by_css_selector(

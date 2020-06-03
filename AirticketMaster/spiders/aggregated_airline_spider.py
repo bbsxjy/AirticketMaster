@@ -22,7 +22,7 @@ class AggregatedAirlineSpider(scrapy.Spider):
     name = settings.SPIDER_NAME
     allowed_domains = settings.ALLOWED_DOMAINS
     start_urls = [
-        settings.CHINA_SOUTHERN_BASE_URL
+        settings.KOREAN_AIRLINE_BASE_URL
     ]
 
     airline_dict = {
