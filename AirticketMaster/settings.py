@@ -94,5 +94,6 @@ KOREAN_AIRLINE_BASE_URL = 'https://www.koreanair.com/global/en.html'
 CHINA_EASTERN_BASE_URL = 'http://www.ceair.com'
 XIAMEN_AIRLINE_BASE_URL = 'https://www.xiamenair.com/zh-cn/'
 CHINA_SOUTHERN_BASE_URL = 'https://www.csair.com/cn/'
-ALLOWED_DOMAINS = ['koreanair.com', 'ceair.com', 'xiamenair.com', 'csair.com']
+DELTA_AIRLINE_BASE_URL = 'https://www.delta.com/'
+ALLOWED_DOMAINS = ['koreanair.com', 'ceair.com', 'xiamenair.com', 'csair.com', 'delta.com']
 SPIDER_NAME = 'gospider'

@@ -7,7 +7,7 @@ from AirticketMaster.spiders.helpers \
     import china_eastern_airline_helper, \
     korean_airline_helper, \
     xia_men_airline_helper, \
-    china_southern_airline_helper
+    china_southern_airline_helper, delta_airline_helper
 
 '''
 
@@ -22,14 +22,15 @@ class AggregatedAirlineSpider(scrapy.Spider):
     name = settings.SPIDER_NAME
     allowed_domains = settings.ALLOWED_DOMAINS
     start_urls = [
-        settings.KOREAN_AIRLINE_BASE_URL
+        settings.DELTA_AIRLINE_BASE_URL
     ]
 
     airline_dict = {
         settings.KOREAN_AIRLINE_BASE_URL: korean_airline_helper.KoreanAirlineHelper(),
         settings.CHINA_EASTERN_BASE_URL: china_eastern_airline_helper.ChinaEasternAirlineHelper(),
         settings.XIAMEN_AIRLINE_BASE_URL: xia_men_airline_helper.XiamenAirlineHelper(),
-        settings.CHINA_SOUTHERN_BASE_URL: china_southern_airline_helper.ChinaSouthernAirlineHelper()
+        settings.CHINA_SOUTHERN_BASE_URL: china_southern_airline_helper.ChinaSouthernAirlineHelper(),
+        settings.DELTA_AIRLINE_BASE_URL: delta_airline_helper.DeltaAirlineHelper()
     }
 
     def __init__(self):
